@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+export const metadata: Metadata = {
+  title: {
+    default: "NursePrep — Nursing Exam Practice",
+    template: "%s | NursePrep",
+  },
+  description:
+    "Practice for NORCET, AIIMS, ESIC, RRB and state nursing exams with mock tests, daily quizzes and PYQs. 1 month free.",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} font-sans`}>
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  );
+}
